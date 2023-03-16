@@ -46,8 +46,12 @@ $ lunch
 $ lunch palomakoba_zeus-eng
 ![image](https://user-images.githubusercontent.com/75500077/225480151-595c7573-2baf-40ab-b9bd-99a1eff5cef6.png)
 
+$ source build/envsetup.sh  # configura o terminal
+$ lunch # Seleciona o número do seu produto ou pressione CTRL+C e execute o próximo comando
+$ lunch palomakoba_zeus-eng
+$ m- j8
 
-
+![image](https://user-images.githubusercontent.com/75500077/225772523-39a96bbb-4abb-412c-b377-cdc221f4918c.png)
 
 
 
