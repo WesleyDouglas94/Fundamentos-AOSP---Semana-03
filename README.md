@@ -52,6 +52,45 @@ $ lunch palomakoba_zeus-eng
 $ m- j8
 
 ![image](https://user-images.githubusercontent.com/75500077/225772523-39a96bbb-4abb-412c-b377-cdc221f4918c.png)
+ 
+ 
+ 5.4. Executando o Novo Produto Criado
+ 
+$ emulator
+![image](https://user-images.githubusercontent.com/75500077/225774476-c841706d-a452-407f-a4f4-fc8d7cf55455.png)
+
+
+5.5. Investigando as Configurações do Emulador
+
+$ gedit build/target/product/sdk_phone_x86_64.mk
+
+# All components inherited here go to system image
+$(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/generic_system.mk)
+
+# All components inherited here go to system_ext image
+$(call inherit-product, $(SRC_TARGET_DIR)/product/handheld_system_ext.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/telephony_system_ext.mk)
+
+# All components inherited here go to product image
+$(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_product.mk)
+
+# All components inherited here go to vendor image
+$(call inherit-product-if-exists, device/generic/goldfish/x86_64-vendor.mk)
+![image](https://user-images.githubusercontent.com/75500077/225775178-00b542ac-e942-4000-ab2f-571d8f72a59c.png)
+
+$(call inherit-product, $(SRC_TARGET_DIR)/product/emulator_vendor.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/board/emulator_x86_64/device.mk)
+
+# Define the host tools and libs that are parts of the SDK.
+
+$(call inherit-product-if-exists, sdk/build/product_sdk.mk)
+![image](https://user-images.githubusercontent.com/75500077/225775942-9f6b1b7e-93b9-487b-9c7d-bade425d5f18.png)
+
+$(call inherit-product-if-exists, development/build/product_sdk.mk)
+![image](https://user-images.githubusercontent.com/75500077/225776244-e89ef220-e870-4693-9f4c-af28925b4dad.png)
+
+
 
 
 
