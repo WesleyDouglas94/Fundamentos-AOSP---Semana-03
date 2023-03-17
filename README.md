@@ -64,7 +64,11 @@ $ emulator
 
 $ gedit build/target/product/sdk_phone_x86_64.mk
 
+
+```
+
 # All components inherited here go to system image
+
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 #FIM
 
@@ -128,21 +132,37 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_product.mk)
 
 # All components inherited here go to vendor image
 $(call inherit-product-if-exists, device/generic/goldfish/x86_64-vendor.mk)
-![image](https://user-images.githubusercontent.com/75500077/225775178-00b542ac-e942-4000-ab2f-571d8f72a59c.png)
+#FIM
 
 $(call inherit-product, $(SRC_TARGET_DIR)/product/emulator_vendor.mk)
+ #INICIO
+  $(call inherit-product, $(SRC_TARGET_DIR)/product/handheld_vendor.mk)
+    $(call inherit-product, $(SRC_TARGET_DIR)/product/media_vendor.mk)
+     $(call inherit-product, $(SRC_TARGET_DIR)/product/base_vendor.mk)
+     FIM
+     
+  $(call inherit-product, $(SRC_TARGET_DIR)/product/telephony_vendor.mk)
+   FIM
+   
+  $(call inherit-product-if-exists, device/generic/goldfish/vendor.mk)
+   $(call inherit-product-if-exists, frameworks/native/build/phone-xhdpi-2048-dalvik-heap.mk)
+   FIM
+   $(call inherit-product, $(SRC_TARGET_DIR)/product/emulated_storage.mk)
+   FIM
+ #FIM
+ 
+ 
 $(call inherit-product, $(SRC_TARGET_DIR)/board/emulator_x86_64/device.mk)
-
+#FIM
 # Define the host tools and libs that are parts of the SDK.
 
 $(call inherit-product-if-exists, sdk/build/product_sdk.mk)
-![image](https://user-images.githubusercontent.com/75500077/225775942-9f6b1b7e-93b9-487b-9c7d-bade425d5f18.png)
+#FIM
 
 $(call inherit-product-if-exists, development/build/product_sdk.mk)
-![image](https://user-images.githubusercontent.com/75500077/225776244-e89ef220-e870-4693-9f4c-af28925b4dad.png)
+#FIM
 
-
-
+```
 
 
 
