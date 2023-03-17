@@ -203,15 +203,23 @@ $(call inherit-product-if-exists, frameworks/webview/chromium/chromium.mk)
 
 ```
 
-
-
-
-
-
-
 $ mplayer frameworks/base/data/sounds/Alarm_Rooster_02.ogg
 ![image](https://user-images.githubusercontent.com/75500077/225784114-d67c57de-2e3c-4e86-aaf1-d36c4a2750fb.png)
 
+```
+$ build/make/target/product/aosp_product.mk 
+#INICIO
+$(call inherit-product, $(SRC_TARGET_DIR)/product/handheld_product.mk)
+  $(call inherit-product, $(SRC_TARGET_DIR)/product/media_product.mk)
+    $(call inherit-product, $(SRC_TARGET_DIR)/product/base_product.mk)
+    FIM
+$(call inherit-product, $(SRC_TARGET_DIR)/product/telephony_product.mk)
+  FIM
+$(call inherit-product-if-exists, frameworks/base/data/sounds/AllAudio.mk)
+  FIM
+#FIM
+
+``` 
 
 
 
