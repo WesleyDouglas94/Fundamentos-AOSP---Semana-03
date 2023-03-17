@@ -66,14 +66,65 @@ $ gedit build/target/product/sdk_phone_x86_64.mk
 
 # All components inherited here go to system image
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
+#FIM
+
 $(call inherit-product, $(SRC_TARGET_DIR)/product/generic_system.mk)
+#INICIO
+ $(call inherit-product, $(SRC_TARGET_DIR)/product/handheld_system.mk)
+   $(call inherit-product, $(SRC_TARGET_DIR)/product/media_system.mk)
+   $(call inherit-product-if-exists, frameworks/base/data/fonts/fonts.mk)
+   $(call inherit-product-if-exists, external/google-fonts/dancing-script/fonts.mk)
+   $(call inherit-product-if-exists, external/google-fonts/carrois-gothic-sc/fonts.mk)
+   $(call inherit-product-if-exists, external/google-fonts/coming-soon/fonts.mk)
+   $(call inherit-product-if-exists, external/google-fonts/cutive-mono/fonts.mk)
+   $(call inherit-product-if-exists, external/google-fonts/source-sans-pro/fonts.mk)
+   $(call inherit-product-if-exists, external/noto-fonts/fonts.mk) 
+   $(call inherit-product-if-exists, external/roboto-fonts/fonts.mk)
+   $(call inherit-product-if-exists, external/hyphenation-patterns/patterns.mk)
+   $(call inherit-product-if-exists, frameworks/base/data/keyboards/keyboards.mk)
+   $(call inherit-product-if-exists, frameworks/webview/chromium/chromium.mk)
+#FIM
+ 
+ 
+ 
+ $(call inherit-product, $(SRC_TARGET_DIR)/product/telephony_system.mk)
+#FIM
+ 
+ $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_default.mk)
+#FIM
+ 
+ $(call inherit-product-if-exists, vendor/google/security/adb/vendor_key.mk)
+NÂO EXISTE
+#FIM
+
+ $(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
+#FIM
+
 
 # All components inherited here go to system_ext image
 $(call inherit-product, $(SRC_TARGET_DIR)/product/handheld_system_ext.mk)
+  #INICIO
+   $(call inherit-product, $(SRC_TARGET_DIR)/product/media_system_ext.mk)
+     $(call inherit-product, $(SRC_TARGET_DIR)/product/base_system_ext.mk)
+  #FIM
+  
 $(call inherit-product, $(SRC_TARGET_DIR)/product/telephony_system_ext.mk)
-
+ #FIM
+ 
+ 
 # All components inherited here go to product image
 $(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_product.mk)
+#INICIO
+  $(call inherit-product, $(SRC_TARGET_DIR)/product/handheld_product.mk)
+    $(call inherit-product, $(SRC_TARGET_DIR)/product/media_product.mk)
+      $(call inherit-product, $(SRC_TARGET_DIR)/product/base_product.mk)
+      
+  $(call inherit-product, $(SRC_TARGET_DIR)/product/telephony_product.mk) 
+  FIM
+  
+  $(call inherit-product-if-exists, frameworks/base/data/sounds/AllAudio.mk)
+  FIM
+#FIM
 
 # All components inherited here go to vendor image
 $(call inherit-product-if-exists, device/generic/goldfish/x86_64-vendor.mk)
@@ -89,6 +140,10 @@ $(call inherit-product-if-exists, sdk/build/product_sdk.mk)
 
 $(call inherit-product-if-exists, development/build/product_sdk.mk)
 ![image](https://user-images.githubusercontent.com/75500077/225776244-e89ef220-e870-4693-9f4c-af28925b4dad.png)
+
+
+
+
 
 
 
