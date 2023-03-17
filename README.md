@@ -164,6 +164,54 @@ $(call inherit-product-if-exists, development/build/product_sdk.mk)
 
 ```
 
+```
+$ build/target/product/handheld_system.mk 
+#INICIO
+
+$(call inherit-product, $(SRC_TARGET_DIR)/product/media_system.mk)
+  $(call inherit-product, $(SRC_TARGET_DIR)/product/base_system.mk)
+   FIM
+  $(call inherit-product, $(SRC_TARGET_DIR)/product/cfi-common.mk)
+   FIM
+  $(call inherit-product-if-exists, vendor/google/products/cfi-vendor.mk)
+   NÃO EXISTE
+$(call inherit-product-if-exists, frameworks/base/data/fonts/fonts.mk)
+  FIM
+$(call inherit-product-if-exists, external/google-fonts/dancing-script/fonts.mk)
+  FIM
+$(call inherit-product-if-exists, external/google-fonts/carrois-gothic-sc/fonts.mk)
+  FIM
+$(call inherit-product-if-exists, external/google-fonts/coming-soon/fonts.mk)
+  FIM
+$(call inherit-product-if-exists, external/google-fonts/cutive-mono/fonts.mk)
+  FIM
+$(call inherit-product-if-exists, external/google-fonts/source-sans-pro/fonts.mk)
+  FIM
+$(call inherit-product-if-exists, external/noto-fonts/fonts.mk)
+  FIM
+$(call inherit-product-if-exists, external/roboto-fonts/fonts.mk)
+  FIM
+$(call inherit-product-if-exists, external/hyphenation-patterns/patterns.mk)
+  FIM
+$(call inherit-product-if-exists, frameworks/base/data/keyboards/keyboards.mk)
+  FIM
+$(call inherit-product-if-exists, frameworks/webview/chromium/chromium.mk)
+  FIM - ARQUIVO VAZIO
+  
+#FIM
+
+
+```
+
+
+
+
+
+
+
+$ mplayer frameworks/base/data/sounds/Alarm_Rooster_02.ogg
+![image](https://user-images.githubusercontent.com/75500077/225784114-d67c57de-2e3c-4e86-aaf1-d36c4a2750fb.png)
+
 
 
 
