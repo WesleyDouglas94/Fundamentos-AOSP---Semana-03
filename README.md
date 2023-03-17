@@ -221,6 +221,14 @@ $(call inherit-product-if-exists, frameworks/base/data/sounds/AllAudio.mk)
 
 ``` 
 
+#### RELATORIO SEMANA --- 3
+
+Durante a criação de um produto Android, foi necessário a o conhecimento dos comandos e a localização dos diretŕóios
+que compões as versões criadas do aosp, assim como, da hierarquia destes diretórios e o cada um armazena.
+No AOSP, a herança entre as configurações de arquivos é muito comum, pois um mesmo arquivo pode compartilhar sua função com outro arquivo completamente diferente mas que necessite dessa função para funcionar.
+Durante o módulo 5.5 de investigação das configurações do EMULADOR, foi possivel visualizar o que foi mencionado acima, como por exemplo, os arquivos de diretórios de audio que são "chamados" em diversos outros arquivos, como de chamada de audio, notificaç
+
+
 
 
 
